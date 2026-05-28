@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Michael Bohm - Product Manager</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #1a1a1a;
+      background: #fff;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      z-index: 100;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      justify-content: center;
+      gap: 2rem;
+      padding: 0.9rem 2rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #444;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: #000;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      background: #1c1c1e;
+      color: #fff;
+      padding: 4rem 2rem 3.5rem;
+    }
+
+    .hero-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    #hero h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 0.6rem;
+    }
+
+    #hero .tagline {
+      font-size: 1.05rem;
+      color: #aaa;
+      margin-bottom: 1.5rem;
+    }
+
+    .social-links {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .social-links a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .social-links a:hover {
+      color: #fff;
+    }
+
+    .social-links .dot {
+      color: #555;
+      font-size: 0.5rem;
+    }
+
+    /* ── SECTIONS ── */
+    .section-inner {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 3.5rem 2rem;
+    }
+
+    .section-inner h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.3px;
+    }
+
+    .section-inner p {
+      color: #333;
+      margin-bottom: 1rem;
+      font-size: 0.97rem;
+    }
+
+    /* ── EXPERIENCE ── */
+    .experience-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.3rem;
+    }
+
+    .exp-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .exp-logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 9px;
+      background: #f2f2f2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: #888;
+      flex-shrink: 0;
+      letter-spacing: 0.3px;
+    }
+
+    .exp-logo img { width: 100%; height: 100%; object-fit: contain; border-radius: 9px; }
+
+    .exp-info strong {
+      display: block;
+      font-size: 0.97rem;
+      font-weight: 600;
+    }
+
+    .exp-info span {
+      font-size: 0.88rem;
+      color: #888;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      border: none;
+      border-top: 1px solid #f0f0f0;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    /* ── PROJECTS ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+
+    @media (max-width: 560px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .project-card {
+      border: 1px solid #e8e8e8;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: box-shadow 0.2s;
+    }
+
+    .project-card:hover {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .project-img-placeholder {
+      width: 100%;
+      height: 150px;
+      background: linear-gradient(135deg, #e8e8e8, #d4d4d4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+    }
+
+    .project-body {
+      padding: 1.1rem;
+    }
+
+    .project-body h3 {
+      font-size: 0.97rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .project-body p {
+      font-size: 0.87rem;
+      color: #555;
+      line-height: 1.5;
+      margin-bottom: 0.9rem;
+    }
+
+    .project-link {
+      font-size: 0.87rem;
+      color: #1a1a1a;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .project-link:hover {
+      text-decoration: underline;
+    }
+
+    /* ── CONTACT ── */
+    #contact a {
+      color: #1a1a1a;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#extracurriculars">Extracurriculars</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div id="hero">
+    <div class="hero-inner">
+      <h1>Michael Bohm</h1>
+      <p class="tagline">Business @ UC Berkeley &amp; Aspiring Product Manager</p>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/michael-bohm-453292291/" target="_blank">LinkedIn</a>
+        <span class="dot">●</span>
+        <a href="mailto:mbohm357@berkeley.edu">Email</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-inner">
+      <h2>About</h2>
+      <p>
+        I am pursuing a Bachelor's degree in Business Administration at UC Berkeley's Haas School of Business.
+        I am passionate about turning problems into creative, tangible solutions.
+      </p>
+      <p>
+        I have previously interned for Amazon as a Program Manager Intern, where I redesigned construction roadmaps
+        and created a dashboard to centralize project proposal data. Prior to that, I participated in the European
+        Innovation Academy's startup accelerator, where I led an international team of five to ideate, prototype,
+        and pitch a solution for event ticket scalping.
+      </p>
+      <p>
+        At UC Berkeley, I served as President of my fraternity and Internal Vice President of Product Space, a
+        student club dedicated to developing the next generation of product thinkers.
+      </p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-inner">
+      <h2>Experience</h2>
+      <div class="experience-list">
+
+        <div class="exp-item">
+          <div class="exp-logo"><img src="images/amazon.svg" alt="Amazon"/></div>
+          <div class="exp-info">
+            <strong>Amazon</strong>
+            <span>Program Manager Intern</span>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-logo"><img src="images/lifestages.svg" alt="Life Stages"/></div>
+          <div class="exp-info">
+            <strong>Life Stages</strong>
+            <span>Product Manager Intern</span>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-logo"><img src="images/eia.svg" alt="EIA"/></div>
+          <div class="exp-info">
+            <strong>European Innovation Academy</strong>
+            <span>Co-Founder &amp; Participant</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- EXTRACURRICULARS -->
+  <section id="extracurriculars">
+    <div class="section-inner">
+      <h2>Extracurriculars</h2>
+      <div class="experience-list">
+
+        <div class="exp-item">
+          <div class="exp-logo"><img src="images/productspace.svg" alt="Product Space"/></div>
+          <div class="exp-info">
+            <strong>Product Space, UC Berkeley</strong>
+            <span>Internal Vice President &amp; Project Manager</span>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-logo"><img src="images/sae.svg" alt="SAE"/></div>
+          <div class="exp-info">
+            <strong>Sigma Alpha Epsilon</strong>
+            <span>Chapter President</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-inner">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <!-- Projects coming soon -->
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-inner">
+      <h2>Contact</h2>
+      <p>
+        Always happy to connect with fellow product thinkers. Reach me at
+        <a href="mailto:mbohm357@berkeley.edu">mbohm357@berkeley.edu</a>
+        or find me on <a href="https://www.linkedin.com/in/michael-bohm-453292291/" target="_blank">LinkedIn</a>.
+      </p>
+    </div>
+  </section>
+
+</body>
+</html>
